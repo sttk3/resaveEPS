@@ -1,0 +1,44 @@
+{
+  "name": "resaveEPS",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir --win --mac --x64",
+    "dist": "electron-builder --win --mac --x64"
+  },
+  "author": "sttk3.com",
+  "license": "MIT",
+  "devDependencies": {
+    "asar": "^3.0.1",
+    "electron": "^8.0.1",
+    "electron-builder": "^21.2.0"
+  },
+  "dependencies": {},
+  "build": {
+    "appId": "com.sttk3.droplet.resaveEPS",
+    "mac": {
+      "icon": "appicon.iconset/appicon.icns",
+      "category": "public.app-category.graphics-design",
+      "fileAssociations": [
+        {
+          "ext": [
+            "ai",
+            "eps"
+          ],
+          "name": "Adobe Illustrator",
+          "role": "Editor"
+        }
+      ]
+    },
+    "win": {
+      "icon": "appicon.iconset/appicon.ico",
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
