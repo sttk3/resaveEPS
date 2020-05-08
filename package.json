@@ -15,7 +15,9 @@
     "electron": "^8.0.1",
     "electron-builder": "^21.2.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "npm-check-updates": "^4.1.2"
+  },
   "build": {
     "appId": "com.sttk3.droplet.resaveEPS",
     "mac": {
