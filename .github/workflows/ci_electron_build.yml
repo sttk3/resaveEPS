@@ -13,6 +13,8 @@ jobs:
   # macOS 用の job 定義
   build_on_mac:
     runs-on: macos-latest
+    env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 12.x
@@ -34,12 +36,12 @@ jobs:
         # アップロード対象となるファイル名
         files: |
           dist/*.dmg
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # Windows 用の job 定義
   build_on_win:
     runs-on: windows-latest
+    env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 12.x
@@ -57,5 +59,3 @@ jobs:
         draft: true
         files: |
           dist/*.exe
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
