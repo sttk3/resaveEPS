@@ -23,6 +23,9 @@ jobs:
         node-version: 12.x
     - name: npm install
       run: npm install
+    # electron-builderを最新に。GH_TOKENが動作しないため
+    - name: update electron-builder
+      run: npm install electron-builder
     # ここでアプリをビルド
     - name: build application
       run: npm run dist-mac
@@ -50,6 +53,8 @@ jobs:
         node-version: 12.x
     - name: npm install
       run: npm install
+    - name: update electron-builder
+      run: npm install electron-builder
     - name: build application
       run: npm run dist-win
     - name: create release
