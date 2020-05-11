@@ -6,7 +6,9 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir --win --mac --x64",
-    "dist": "electron-builder --win --mac --x64"
+    "dist": "electron-builder --win --mac --x64",
+    "dist-win": "electron-builder --win --x64",
+    "dist-mac": "electron-builder --mac --x64"
   },
   "author": "sttk3.com",
   "license": "MIT",
@@ -22,6 +24,7 @@
     "appId": "com.sttk3.droplet.resaveEPS",
     "mac": {
       "icon": "appicon.iconset/appicon.icns",
+      "target": "dmg",
       "category": "public.app-category.graphics-design",
       "fileAssociations": [
         {
