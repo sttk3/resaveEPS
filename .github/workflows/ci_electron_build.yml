@@ -15,6 +15,7 @@ jobs:
     runs-on: macos-latest
     env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 12.x
@@ -45,6 +46,7 @@ jobs:
     runs-on: windows-latest
     env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js 12.x
