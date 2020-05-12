@@ -1,6 +1,6 @@
 /**
   * @file Illustrator書類をバージョン10のepsで上書きする。saveAs（別名保存）を経由するのがポイント
-  * @version 1.0.0
+  * @version 1.0.1
   * @author sttk3.com
   * @copyright (c) 2020 sttk3.com
 */
