@@ -40,8 +40,6 @@ jobs:
         # アップロード対象となるファイル名
         files: |
           dist/*.dmg
-          !dist/*.yml
-          !dist/*.exe
 
   # Windows 用の job 定義
   build_on_win:
@@ -68,5 +66,3 @@ jobs:
         draft: true
         files: |
           dist/*.exe
-          !dist/*.yml
-          !dist/*.blockmap

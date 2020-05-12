@@ -15,11 +15,13 @@
   // eps保存オプションを指定する
   var epsOpts = new EPSSaveOptions() ;
   epsOpts.compatibility = Compatibility.ILLUSTRATOR10 ;
-  epsOpts.cmykPostScript = false ;
-  epsOpts.compatibleGradientPrinting = false ;
+  epsOpts.preview = EPSPreview.None ;
   epsOpts.embedAllFonts = false ;
   epsOpts.embedLinkedFiles = false ;
+  epsOpts.cmykPostScript = false ;
   epsOpts.includeDocumentThumbnails = false ;
+  epsOpts.compatibleGradientPrinting = false ;
+  epsOpts.postScript = EPSPostScriptLevelEnum.LEVEL2 ;
   epsOpts.saveMultipleArtboards = false ;
   
   var currentFile, doc ;
