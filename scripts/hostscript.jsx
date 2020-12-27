@@ -1,6 +1,6 @@
 /**
   * @file Illustrator書類をバージョン10のepsで上書きする。saveAs（別名保存）を経由するのがポイント
-  * @version 1.0.1
+  * @version 1.0.2
   * @author sttk3.com
   * @copyright (c) 2020 sttk3.com
 */
@@ -23,6 +23,8 @@
   epsOpts.compatibleGradientPrinting = false ;
   epsOpts.postScript = EPSPostScriptLevelEnum.LEVEL2 ;
   epsOpts.saveMultipleArtboards = false ;
+
+  var origLevel = app.userInteractionLevel ;
   
   var currentFile, doc ;
   for(var i = 0, len = targetItems.length ; i < len ; i++) {
@@ -32,10 +34,19 @@
     app.open(currentFile) ;
     doc = app.documents[0] ;
     
-    // saveAs（別名保存）経由で上書きする
-    doc.saveAs(currentFile, epsOpts) ;
+    // saveAs（別名保存）経由で上書きする。書類中に日本語名ブラシを適用したアイテムがあると，[CANT]みたいなダイアログが出る(エラーではない)ので無視する
+    try {
+      app.userInteractionLevel = UserInteractionLevel.DONTDISPLAYALERTS ;
+      doc.saveAs(currentFile, epsOpts) ;
+      app.userInteractionLevel = origLevel ;
+    } catch(e) {
+      app.userInteractionLevel = origLevel ;
+      alert(e) ;
+    }
     
     doc.close(SaveOptions.DONOTSAVECHANGES) ;
   }
+
+  app.userInteractionLevel = origLevel ;
   return i.toString() ;
 })(arguments[0]) ;

@@ -2,6 +2,7 @@ const { app, BrowserWindow, dialog, ipcMain, Notification } = require('electron'
 const { spawnSync, execFileSync } = require('child_process') ;
 const fs = require('fs') ;
 const path = require('path') ;
+const appMenu = require('./appMenu.js') ;
 
 // 二重起動の禁止
 const gotTheLock = app.requestSingleInstanceLock() ;
@@ -47,7 +48,10 @@ app.on('activate', () => {
   }
 }) ;
 
-app.on('ready', createWindow) ;
+app.on('ready', () => {
+  appMenu.set() ;
+  createWindow() ;
+}) ;
 
 app.on('will-finish-launching', () => {
   /*

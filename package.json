@@ -1,6 +1,6 @@
 {
   "name": "resaveEPS",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "test",
   "main": "src/main.js",
   "scripts": {
@@ -13,8 +13,8 @@
   "author": "sttk3.com",
   "license": "MIT",
   "devDependencies": {
-    "asar": "^3.0.1",
-    "electron": "^8.0.1",
+    "asar": "^3.0.3",
+    "electron": "^9.3.2",
     "electron-builder": "^21.2.0"
   },
   "dependencies": {
